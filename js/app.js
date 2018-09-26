@@ -5,37 +5,31 @@ $(document).ready(function () {
 	if (navigator.geolocation) {
 
 		navigator.geolocation.getCurrentPosition(function (position) {
-			lon = position.coords.longitude;
+			lon = position.coords.longitude; 
 			lat = position.coords.latitude;
 			var api = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=bb4b778076b0c8c79c7eb8fcd1fd4330';
-			$.getJSON(api, function (data) {
-				// $("#data").html(api);
+			$.getJSON(api, function (data) {     //data holds all the weather information and forecast of the city(found by the longitude and latitude whereever the user logins)
 				var city = data.city.name;
-				weatherType = data.list[0].weather[0].description;
-				//weatherType="clear sky";
-				ktemp = data.list[0].main.temp;
+				weatherType = data.list[0].weather[0].description; //eg: clear sky
+				ktemp = data.list[0].main.temp;    //ktemp holds the temperature in kelvin
 				console.log(ktemp);
-				ftemp = (9 / 5 * (ktemp - 273) + 32).toFixed(1);
-				ctemp = (5 / 9 * (ftemp - 32)).toFixed(1);
-				wspeed = data.list[0].wind.speed;
-				wspeed = (wspeed * 5 / 18).toFixed(1);
-				/* $("#city").addClass("animated fadein",function(){
-							 $("#city").html(city);
-							 }); */
+				ftemp = (9 / 5 * (ktemp - 273) + 32).toFixed(1);       //Farenheit
+				ctemp = (5 / 9 * (ftemp - 32)).toFixed(1);             //Celsius
+				wspeed = data.list[0].wind.speed;                      //Windspeed
+				wspeed = (wspeed * 5 / 18).toFixed(1);                 //Windspeed in kmph
 				$("#city").addClass("animated fadein");
 				$("#city").html(city);
 				$("#weatherType").html(weatherType);
 				$("#temp").html(ctemp + " ℃");
-				//$("[name='my-checkbox']").bootstrapSwitch();
 				$("#degree-toggle").attr("value", $("<div/>").html("℉").text());
 				var celsius = true;
-				$("#degree-toggle").on("click", function () {
-					if (celsius === true) {
+				$("#degree-toggle").on("click", function () {    
+					if (celsius === true) {               //This condition is executed if the user is trying to change to farenheit from celsius
 						$("#temp").html(ftemp + " ℉");
 						$("#temp").fadeIn();
 						$("#degree-toggle").attr("value", $("<div/>").html("℃").text());
 						celsius = false;
-					} else {
+					} else {                             //This condition is executed if the user is trying to change to Celsius from Farenheit
 						$("#temp").html(ctemp + " ℃");
 						$("#temp").fadeIn();
 						$("#degree-toggle").attr("value", $("<div/>").html("℉").text());
@@ -44,8 +38,8 @@ $(document).ready(function () {
 				});
 				$("#wspeed").html(wspeed + " kmph");
 				weatherType = weatherType.toLowerCase();
-				if (weatherType === "clear sky")
-					$("body").css({
+				if (weatherType === "clear sky")         //One of these conditions are executed depending on the weather type. Eg: the first background will be displayed if the weather type is clear sky/
+					$("body").css({                      
 						'background-image': 'url(\'images/clear sky.png\')',
 						'background-size': '100% 100%'
 					});
