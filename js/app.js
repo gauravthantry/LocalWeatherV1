@@ -26,12 +26,12 @@ $(document).ready(function () {
 				$("#degree-toggle").on("click", function () {    
 					if (celsius === true) { //This condition is executed if the user is trying to change to farenheit from celsius
 						$("#temp").html().fadeOut();
-						$("#temp").html(ftemp + " ℉");
+						//$("#temp").html(ftemp + " ℉");
 						//$("#temp").fadeIn();
 						$("#degree-toggle").attr("value", $("<div/>").html("℃").text());
 						celsius = false;
 					} else {                             //This condition is executed if the user is trying to change to Celsius from Farenheit
-						$("#temp").html(ctemp + " ℃");
+						//$("#temp").html(ctemp + " ℃");
 						$("#temp").html().fadeOut();
 						//$("#temp").fadeIn();
 						$("#degree-toggle").attr("value", $("<div/>").html("℉").text());
