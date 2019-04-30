@@ -5,7 +5,7 @@ $(document).ready(function () {
 	if (navigator.geolocation) {
 
 		navigator.geolocation.getCurrentPosition(function (position) {
-			lon = position.coords.longitude; 
+			lon = position.coords.longitude;
 			lat = position.coords.latitude;
 			var api = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=bb4b778076b0c8c79c7eb8fcd1fd4330';
 			$.getJSON(api, function (data) {     //data holds all the weather information and forecast of the city(found by the longitude and latitude whereever the user logins)
@@ -23,7 +23,7 @@ $(document).ready(function () {
 				$("#temp").html(ctemp + " ℃");
 				$("#degree-toggle").attr("value", $("<div/>").html("℉").text());
 				var celsius = true;
-				$("#degree-toggle").on("click", function () {    
+				$("#degree-toggle").on("click", function () {
 					if (celsius === true) { //This condition is executed if the user is trying to change to farenheit from celsius
 						$("#temp").html().fadeOut();
 						//$("#temp").html(ftemp + " ℉");
@@ -41,13 +41,13 @@ $(document).ready(function () {
 				$("#wspeed").html(wspeed + " kmph");
 				weatherType = weatherType.toLowerCase();
 				if (weatherType === "clear sky")         //One of these conditions are executed depending on the weather type. Eg: the first background will be displayed if the weather type is clear sky/
-					$("body").css({                      
-						'background-image': 'url(\'images/clear-sky.png\')',
+					$("body").css({
+						'background-image': 'url(\'images/clear sky.png\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "few clouds")
 					$("body").css({
-						'background-image': 'url(\'images/few-clouds\')',
+						'background-image': 'url(\'images/few clouds\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "cloudy")
