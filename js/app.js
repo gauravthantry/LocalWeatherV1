@@ -67,7 +67,7 @@ $(document).ready(function () {
 					});
 				else if (weatherType === "overcast clouds")
 					$("body").css({
-						'background-image': 'url(\'images/overcast clouds\')',
+						'background-image': 'url('/images/overcast clouds.jpg')',
 						'background-size': '100% 100%'
 					});
 				else
