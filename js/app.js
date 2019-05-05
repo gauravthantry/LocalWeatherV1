@@ -73,7 +73,8 @@ $(document).ready(function () {
 				else
 					$("body").css({
 						'background-image': 'url(\'images/others.jpg\')',
-						'background-size': '100% 100%'
+						'background-size': '100% 100%',
+						'font-weight':'bold'
 					});
 			});
 		});
