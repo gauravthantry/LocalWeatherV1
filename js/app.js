@@ -42,27 +42,27 @@ $(document).ready(function () {
 				weatherType = weatherType.toLowerCase();
 				if (weatherType === "clear sky")         //One of these conditions are executed depending on the weather type. Eg: the first background will be displayed if the weather type is clear sky/
 					$("body").css({
-						'background-image': 'url(\'images/clear sky.png\')',
+						'background-image': 'url(\'images/clear-sky.png\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "few clouds")
 					$("body").css({
-						'background-image': 'url(\'images/few clouds\')',
+						'background-image': 'url(\'images/few-clouds.jpg\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "cloudy")
 					$("body").css({
-						'background-image': 'url(\'images/cloudy\')',
+						'background-image': 'url(\'images/cloudy.jpg\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "sunny")
 					$("body").css({
-						'background-image': 'url(\'images/sunny\')',
+						'background-image': 'url(\'images/sunny.jpg\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "showers")
 					$("body").css({
-						'background-image': 'url(\'images/showers\')',
+						'background-image': 'url(\'images/showers.jpg\')',
 						'background-size': '100% 100%'
 					});
 				else if (weatherType === "overcast clouds")
@@ -72,7 +72,7 @@ $(document).ready(function () {
 					});
 				else
 					$("body").css({
-						'background-image': 'url(\'images/others\')',
+						'background-image': 'url(\'images/others.jpg\')',
 						'background-size': '100% 100%'
 					});
 			});
