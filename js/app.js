@@ -65,7 +65,7 @@ $(document).ready(function () {
 						'background-image': 'url(\'images/showers.jpg\')',
 						'background-size': '100% 100%'
 					});
-				else if (weatherType === "overcast clouds")
+				else if (weatherType == "overcast clouds")
 					$("body").css({
 						'background-image': 'url(\'images/overcast-clouds.jpg\')',
 						'background-size': '100% 100%'
